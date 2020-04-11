@@ -1,4 +1,5 @@
 const os = require('os');
+const logger = require('./logger');
 
 function convertMemToMB(mem) {
   return parseInt(mem / 1024 / 1024);
@@ -20,4 +21,6 @@ setInterval(() => {
   console.clear();
   console.log('=== PC STATS ===');
   console.table(stats);
+
+  logger(`${JSON.stringify(stats)}\n`);
 }, 1000);
