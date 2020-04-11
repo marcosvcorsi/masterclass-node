@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
   });
 
   if (!name || !url) {
-    res.end(JSON.stringify(data));
+    return res.end(JSON.stringify(data));
   }
 
   if (del) {
